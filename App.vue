@@ -1,19 +1,33 @@
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+</script>
+
 <template>
   <header>
-    <img alt="Vlone logo" class="logo" src="@/assets/vlone-logo-6CF714370C-seeklogo.com.png" width="125" height="125" />  
+    <img alt="Vlone logo" class="logo" src="@/assets/vlone-logo-6CF714370C-seeklogo.com.png" width="125" height="125" />
+    <div class="wrapper">
+      <HelloWorld msg="You did it!" />
+
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/previas">Produtos</RouterLink>
+        <RouterLink to="/inscricao">Fila de espera</RouterLink>
+        <RouterLink to="/login">Logar</RouterLink>
+        <RouterLink to="/app2" target="_blank">App pre lancado</RouterLink>
+      </nav>
+    </div>
   </header>
-  <main>
-    <h1>Calma, jaja esta pronto!</h1>
-  </main>
+
+  <RouterView />
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
-  align-items: center;
-  margin-left: 44px;
-
 }
 
 .logo {
